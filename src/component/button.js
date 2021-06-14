@@ -4,7 +4,7 @@ const Button = ({ color }) => {
     const onClick = (e) => console.log(e);
 
     return (
-        <button onClick={onClick('aegea')} style={{backgroundColor: color}} >Add</button>
+        <button className='btn' onClick={onClick('aegea')} >Add</button>
     )
 }
 
