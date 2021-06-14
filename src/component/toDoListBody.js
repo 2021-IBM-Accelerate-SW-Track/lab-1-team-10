@@ -35,7 +35,7 @@ const Main = () => {
 		  borderRadius: 15,
 		  border: 0,
 		  color: 'white',
-		  height: 70,
+		  height: 75,
 		  padding: '0 30px',
 		  boxShadow: '5px 5px 25px -5px rgba(0,0,0,0.5)',
 		  
