@@ -1,0 +1,61 @@
+.childOne{
+	width: 50%;
+	height: 65vh;
+	background-color: #f4f4f4;
+	box-shadow: 5px 5px 25px -5px rgba(0,0,0,0.5);
+	border-radius: 10px;
+	margin: auto;
+}
+
+
+
+
+input{
+	padding: 25px;
+	text-align: left;
+	height: 30px;
+	border: 10px;
+	background: transparent;
+	font-family: georgia;
+	font-size:	20px;
+	font-weight: 500;
+	width: 80%;
+	border-bottom: 2px solid #0F62FE;
+	outline: none;
+	margin-right: 50px;
+}
+
+
+.AddBtn{
+	width: 5px;
+	height: 50px;
+	background-color: #0F62FE!important;
+	color: white !important;
+	box-shadow: 5px 5px 15px -5px rgba(0,0,0,0.3);
+	border-radius: 50% !important;
+}
+
+.textFont{
+	font-family: georgia;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.childTwo{
+	width: 35%;
+	height: 7vh;
+	background-color: #f4f4f4;
+	box-shadow: 5px 5px 25px -5px rgba(0,0,0,0.5);
+	border-radius: 15px;
+	margin: auto;
+}
+
+.delBtn{
+	
+	width: 100%;
+	height: 7vh;
+	background-color: #f4f4f4;
+	box-shadow: 5px 5px 25px -5px rgba(0,0,0,0.5);
+	border-radius: 15px;
+	margin: auto;
+}
