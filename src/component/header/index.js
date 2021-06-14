@@ -5,35 +5,44 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-//import Link from '@material-ui/core/Link';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
     flexDirection: 'column',
-
   },
   main: {
-    marginTop: theme.spacing(2),
+    marginTop: theme.spacing(1),
     marginBottom: theme.spacing(1),
+  },
+  title: {
+    fontSize: 50,
+    fontWeight:500,
+    fontFamily:"Georgia",
+    
+  },
+  subtitle: {
+    fontSize: 25,
+    fontWeight:500,
+    fontFamily:"Georgia",
   },
 
 }));
 
-export default function ToDoList() {
+export default function Header() {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      <AppBar position ="static" color="inherit">
+      <AppBar style={{background:'#0F62FE'}} position ="static" >
         <Toolbar variant="dense">
         <CssBaseline />
-        <Container component="main" className={classes.main} maxWidth="sm">
-          <Typography variant="h2" component="h1" gutterBottom>
+       <Container component="main" className={classes.main} maxWidth="sm">
+          <Typography className={classes.title} variant="h2" noWrap>
             To-Do List
           </Typography>
 
-          <Typography variant="body1">Put in your most needed items to do</Typography>
+          <Typography className={classes.subtitle} variant="body1">Put in your most needed items to do</Typography>
           
       </Container>
         </Toolbar>

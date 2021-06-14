@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -28,14 +29,31 @@ const Main = () => {
 	const thirdEvent = () => {
 		setNewItem([]);
 	}
-	
+	const useStyles = makeStyles({
+		root: {
+		  background: 'linear-gradient(45deg, #007D79 30%, #0F62FE 90%)',
+		  borderRadius: 15,
+		  border: 0,
+		  color: 'white',
+		  height: 70,
+		  padding: '0 30px',
+		  boxShadow: '5px 5px 25px -5px rgba(0,0,0,0.5)',
+		  
+		},
+		label: {
+		  textTransform: 'capitalize',
+		  fontFamily: 'georgia',
+		},
+	  });
+	  const classes = useStyles();
 	return(
+		
 		<div>
 			<br />
 			<br />
 			<div className="childOne">
-				<input type="text" value={item} placeholder="Add a task" onChange={firstEvent} />
-				<Button className="AddBtn" onClick={secondEvent}>
+				<input type="text" value={item} placeholder="Add your task" onChange={firstEvent} />
+				<Button className="AddBtn" onClick={secondEvent} >
 					<AddIcon />
 				</Button>
 				<br />
@@ -51,8 +69,8 @@ const Main = () => {
 			<br />
 			<br />
 			<div className="childTwo">
-				<Button className="delBtn" onClick={thirdEvent}>
-					<DeleteIcon />Delete All
+				<Button className="delBtn" onClick={thirdEvent} classes={{root: classes.root, label: classes.label,}}>
+					<DeleteIcon />Delete It All
 				</Button>
 			</div>
 		</div>
