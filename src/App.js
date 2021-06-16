@@ -8,6 +8,7 @@ import AddTask from './component/addTask';
 function App() {
   const [showAddTask, setShowAddTask] = useState(false)
   const [tasks, setTasks] = useState([])
+  
 
   //adding a task
   const addTask = (task) => {
@@ -22,6 +23,7 @@ function App() {
 
     const id = Math.floor(Math.random() * 10000) + 1
     let newTask = {
+      complete: false,
       id,
       ...task
     }
@@ -44,13 +46,17 @@ function App() {
       }
       return task
     }))
-
   }
 
+  const completeTasks = (id) => {
+    setTasks(tasks.map((task) => {
+      if (task.id === id) {
+        task.complete = !(task.complete)
+      }
+      return task
+    }))
+  }
   
-
-
-
 return (
   <div className="App">
 
@@ -60,7 +66,7 @@ return (
       showAdd={showAddTask}
     />
     {showAddTask && (<AddTask onAdd={addTask} />)}
-    {tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={deleteTask} onEdit={editTasks} />) : 'You finished everything on your list!'}
+    {tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={deleteTask} onEdit={editTasks} completeTasks={completeTasks} />) : 'You finished everything on your list!'}
 
   </div>
 );
