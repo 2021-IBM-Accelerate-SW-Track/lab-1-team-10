@@ -1,55 +1,69 @@
 import { useState } from 'react'
 import Header from "./component/header"
-import Button from "./component/button";
 import Tasks from "./component/Tasks";
 import './App.css';
 import AddTask from './component/addTask';
 
+
 function App() {
+  const [showAddTask, setShowAddTask] = useState(false)
+  const [tasks, setTasks] = useState([])
 
-  const [tasks, setTasks] = useState(
-    [
-      {
-        id: 1,
-        text: 'Meeting',
-        date: 'soon',
-        reminder: true,
-      },
-      {
-        id: 2,
-        text: 'Cook dinner',
-        date: 'soon',
-        reminder: true,
+  //adding a task
+  const addTask = (task) => {
+    let canAdd = true;
+    //Checks for duplicate item
+    tasks.forEach((t) => {
+      if ((t.text).toLowerCase() === (task.text).toLowerCase()) {
+        alert('Duplicate item - add something else!')
+        canAdd = false;
       }
-    ])
+    })
 
-
-    //adding a task
-    const addTask = (task) => {
-      const id = Math.floor(Math.random() * 10000) + 1
-      let newTask = {
-        id, 
-        ...task
-      }
+    const id = Math.floor(Math.random() * 10000) + 1
+    let newTask = {
+      id,
+      ...task
+    }
+    if (canAdd) {
       setTasks([...tasks, newTask])
     }
+  }
 
-    //deleting a task
-    const deleteTask = (id) => {
-      setTasks(tasks.filter((task) => task.id !== id))
-    }
+  //deleting a task
+  const deleteTask = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id))
+  }
 
-  return (
-    <div className="App">
+  //edit a task
+  const editTasks = (newTask) => {
+    setTasks(tasks.map((task) => {
+      if (task.id === newTask.id) {
+        task.text = newTask.text
+        task.date = newTask.date
+      }
+      return task
+    }))
 
-      <Header title='2021 IBM Accelerate Software Track Lab 1 Team 10 To Do List App' />
-      <AddTask onAdd={addTask}/>
+  }
 
-      <Button className='btn-block' color='steelblue' />
-      {tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={deleteTask}/>) : 'You finished everything on your list!'}
+  
 
-    </div>
-  );
+
+
+return (
+  <div className="App">
+
+    <Header
+      title='2021 IBM Accelerate Software Track Lab 1 Team 10 To Do List App'
+      onAdd={() => setShowAddTask(!showAddTask)}
+      showAdd={showAddTask}
+    />
+    {showAddTask && (<AddTask onAdd={addTask} />)}
+    {tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={deleteTask} onEdit={editTasks} />) : 'You finished everything on your list!'}
+
+  </div>
+);
 }
 
 

@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 const AddTask = ({ onAdd }) => {
     const [text, setText] = useState('')
-    const [day, setDay] = useState('')
+    const [date, setDay] = useState('')
     const onSubmit = (e) => {
         e.preventDefault()
         if (!text){
@@ -10,7 +10,7 @@ const AddTask = ({ onAdd }) => {
             return
         }
 
-        onAdd({text, day})
+        onAdd({text, date})
         setText('')
         setDay('')
     }
@@ -26,7 +26,7 @@ const AddTask = ({ onAdd }) => {
                 <label>Date and Time</label>
                 <input type='text' 
                 placeholder='Add a Current Date and Time' 
-                value={day} onChange={(e) => setDay(e.target.value)}></input>
+                value={date} onChange={(e) => setDay(e.target.value)}></input>
             </div>
             <input type='submit' value='Save Task' className='btn btn-block' />
         </form>

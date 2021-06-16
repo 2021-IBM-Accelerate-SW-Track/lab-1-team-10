@@ -1,10 +1,10 @@
 import Task from './Task.js'
 
-const Tasks = (props) => {
+const Tasks = ({ tasks, onDelete, onEdit, getEdit }) => {
     return (
         <div>
-            {props.tasks.map((task) => (
-                <Task key={task.id} task={task} onDelete={props.onDelete}/>
+            {tasks.map((task) => (
+                <Task key={task.id} task={task} onDelete={onDelete} onEdit={onEdit} getEdit={getEdit} />
             ))}
         </div>
     )
