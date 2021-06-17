@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
-const EditTask = ({ onEdit, id, setEditTask }) => {
-    const [newText, setNewText] = useState('')
+const EditTask = ({ onEdit, id, setEditTask, originalText }) => {
+    const [newText, setNewText] = useState(originalText)
     const onSubmit = (e) => {
         e.preventDefault()
         if (!newText){

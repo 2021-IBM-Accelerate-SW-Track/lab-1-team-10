@@ -16,7 +16,7 @@ const Task = ({ key, task, onDelete, onEdit, completeTasks }) => {
                 <FaTimes cursor='pointer' onClick={() => onDelete(task.id)} />
             </h3>
             <h3>{task.date}</h3>
-            {showEditTask && (<EditTask onEdit={onEdit} id={task.id} setEditTask={setEditTask}/>)}
+            {showEditTask && (<EditTask onEdit={onEdit} id={task.id} setEditTask={setEditTask} originalText={task.text} />)}
         </div>
     )
 }
