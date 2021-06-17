@@ -3,6 +3,7 @@ import Header from "./component/header"
 import Tasks from "./component/Tasks";
 import './App.css';
 import AddTask from './component/addTask';
+import Button from './component/button';
 
 
 function App() {
@@ -65,7 +66,7 @@ function App() {
       />
       <Button
         color='steelblue'
-        text={{ showAddTask } ? 'Close' : 'Add new Task'}
+        text={showAddTask ? 'Close' : 'Add new Task'}
         onClick={() => setShowAddTask(!showAddTask)}
         data-testid="new-item-button"
       />
