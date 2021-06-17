@@ -8,7 +8,7 @@ import AddTask from './component/addTask';
 function App() {
   const [showAddTask, setShowAddTask] = useState(false)
   const [tasks, setTasks] = useState([])
-  
+
 
   //adding a task
   const addTask = (task) => {
@@ -56,20 +56,24 @@ function App() {
       return task
     }))
   }
-  
-return (
-  <div className="App">
 
-    <Header
-      title='2021 IBM Accelerate Software Track Lab 1 Team 10 To Do List App'
-      onAdd={() => setShowAddTask(!showAddTask)}
-      showAdd={showAddTask}
-    />
-    {showAddTask && (<AddTask onAdd={addTask} />)}
-    {tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={deleteTask} onEdit={editTasks} completeTasks={completeTasks} />) : 'You finished everything on your list!'}
+  return (
+    <div className="App">
 
-  </div>
-);
+      <Header
+        title='2021 IBM Accelerate Software Track Lab 1 Team 10 To Do List App'
+      />
+      <Button
+        color='steelblue'
+        text={{ showAddTask } ? 'Close' : 'Add new Task'}
+        onClick={() => setShowAddTask(!showAddTask)}
+        data-testid="new-item-button"
+      />
+      {showAddTask && (<AddTask onAdd={addTask} />)}
+      {tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={deleteTask} onEdit={editTasks} completeTasks={completeTasks} />) : 'You finished everything on your list!'}
+
+    </div>
+  );
 }
 
 
