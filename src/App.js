@@ -64,11 +64,11 @@ function App() {
       <Header
         title='2021 IBM Accelerate Software Track Lab 1 Team 10 To Do List App'
       />
-      <Button
-        color='steelblue'
-        text={showAddTask ? 'Close' : 'Add new Task'}
-        onClick={() => setShowAddTask(!showAddTask)}
-        data-testid="new-item-button"
+      <Button 
+        color='steelblue' 
+        text={showAddTask ? 'Close' : 'Add new Task'} 
+        onClick={() => setShowAddTask(!showAddTask)} 
+        data-testid="new-item-button" 
       />
       {showAddTask && (<AddTask onAdd={addTask} />)}
       {tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={deleteTask} onEdit={editTasks} completeTasks={completeTasks} />) : 'You finished everything on your list!'}

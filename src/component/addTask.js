@@ -21,7 +21,7 @@ const AddTask = ({ onAdd }) => {
                 <input type='text' placeholder='Add a Task' value={text} onChange={(e) =>
                 setText(e.target.value) }></input>
             </div>        
-            <input type='submit' value='Save Task' className='btn btn-block' />
+            <input data-testid="new-item-input" type='submit' value='Save Task' className='btn btn-block' />
         </form>
     )
 }
