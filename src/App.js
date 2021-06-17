@@ -60,7 +60,6 @@ function App() {
 
   return (
     <div className="App">
-
       <Header
         title='2021 IBM Accelerate Software Track Lab 1 Team 10 To Do List App'
       />
