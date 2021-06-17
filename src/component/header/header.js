@@ -8,6 +8,7 @@ export default function Header({ title, onAdd, showAdd }) {
                 color='green'
                 text={showAdd ? 'Close' : 'Add new Task'} 
                 onClick={() => onAdd()} 
+                data-testid="new-item-button" 
             />
         </header>
 

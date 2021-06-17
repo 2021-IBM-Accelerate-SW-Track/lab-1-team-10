@@ -1,8 +1,9 @@
 import React from 'react'
+import Button from '@material-ui/core'
 
 const Button = ({ color, text, onClick }) => {
     return (
-        <button data-testid="new-item-button" style={{ backgroundColor: color }} className='btn' onClick={onClick} >
+        <button style={{ backgroundColor: color }} className='btn' onClick={onClick} >
             {text}
         </button>
     )
