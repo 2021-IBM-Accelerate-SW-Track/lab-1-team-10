@@ -10,13 +10,13 @@ const Task = ({ key, task, onDelete, onEdit, completeTasks }) => {
     return (
         <div className='task'>
             <h3>
-                {(task.complete ? (<CheckBoxIcon onClick={() => completeTasks(task.id)}/>) : (<CheckBoxOutlineBlankIcon onClick={() => completeTasks(task.id)}/>))}
+                {(task.complete ? (<CheckBoxIcon style = {{backgroundColor: 'green'}} onClick={() => completeTasks(task.id)}/>) : (<CheckBoxOutlineBlankIcon onClick={() => completeTasks(task.id)}/>))}
                 {task.text}
                 <EditIcon cursor='pointer' onClick={() => setEditTask(!showEditTask)} />
                 <FaTimes cursor='pointer' onClick={() => onDelete(task.id)} />
             </h3>
             <h3>{task.date}</h3>
-            {showEditTask && (<EditTask onEdit={onEdit} id={task.id} setEditTask={setEditTask}/>)}
+            {showEditTask && (<EditTask onEdit={onEdit} id={task.id} setEditTask={setEditTask} originalText={task.text} />)}
         </div>
     )
 }
