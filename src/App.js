@@ -71,11 +71,8 @@ function App() {
       />
       {showAddTask && (<AddTask onAdd={addTask} />)}
       {tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={deleteTask} onEdit={editTasks} completeTasks={completeTasks} />) : 'You finished everything on your list!'}
-
     </div>
   );
 }
-
-
 
 export default App;

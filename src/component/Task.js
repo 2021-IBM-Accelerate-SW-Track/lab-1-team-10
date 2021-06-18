@@ -10,7 +10,7 @@ const Task = ({ key, task, onDelete, onEdit, completeTasks }) => {
     return (
         <div className='task'>
             <h3>
-                {(task.complete ? (<CheckBoxIcon onClick={() => completeTasks(task.id)}/>) : (<CheckBoxOutlineBlankIcon onClick={() => completeTasks(task.id)}/>))}
+                {(task.complete ? (<CheckBoxIcon style = {{backgroundColor: 'green'}} onClick={() => completeTasks(task.id)}/>) : (<CheckBoxOutlineBlankIcon onClick={() => completeTasks(task.id)}/>))}
                 {task.text}
                 <EditIcon cursor='pointer' onClick={() => setEditTask(!showEditTask)} />
                 <FaTimes cursor='pointer' onClick={() => onDelete(task.id)} />
