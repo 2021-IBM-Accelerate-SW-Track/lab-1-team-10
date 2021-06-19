@@ -1,11 +1,24 @@
-import React from 'react'
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 
-const Button = ({ color, text, onClick }) => {
+const useStyles = makeStyles((theme) => ({
+    root: {
+      '& > *': {
+        margin: theme.spacing(1),
+      },
+    },
+  }));
+  
+  export default function ContainedButtons() {
+    const classes = useStyles();
+  
     return (
-        <button style={{ backgroundColor: color }} className='btn' onClick={() => onClick()} >
-            {text}
-        </button>
-    )
-}
-
-export default Button
+      <div className={classes.root}>
+        <Button variant="contained" color="primary">
+            Add
+        </Button>
+    </div>
+        
+  );
+}        
