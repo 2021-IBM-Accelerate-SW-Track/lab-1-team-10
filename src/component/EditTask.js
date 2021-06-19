@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Button } from '@material-ui/core'
 
 const EditTask = ({ onEdit, id, setEditTask, originalText }) => {
     const [newText, setNewText] = useState(originalText)
@@ -22,7 +23,7 @@ const EditTask = ({ onEdit, id, setEditTask, originalText }) => {
                 <input type='text' placeholder='Edit your Task' value={newText} onChange={(e) =>
                 setNewText(e.target.value)}></input>
             </div>        
-            <input type='submit' value='Save Task' className='btn btn-block' />
+            <Button color='primary' variant='contained' type='submit'>Save Task</Button>
         </form>
     )
 }

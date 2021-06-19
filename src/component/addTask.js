@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Button } from '@material-ui/core'
 
 const AddTask = ({ onAdd }) => {
     const [text, setText] = useState('')
@@ -18,10 +19,10 @@ const AddTask = ({ onAdd }) => {
         <form className='add-form' onSubmit={onSubmit}>
             <div className='form-control'>
                 <label>Task</label>
-                <input type='text' placeholder='Add a Task' value={text} onChange={(e) =>
+                <input data-testid="new-item-input" type='text' placeholder='Add a Task' value={text} onChange={(e) =>
                 setText(e.target.value) }></input>
             </div>        
-            <input data-testid="new-item-input" type='submit' value='Save Task' className='btn btn-block' />
+            <Button data-testid="new-item-button" color='primary' variant='contained' type='submit'>Save Task</Button>
         </form>
     )
 }
