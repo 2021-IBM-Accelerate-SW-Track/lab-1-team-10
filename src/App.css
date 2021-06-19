@@ -73,6 +73,10 @@ code {
   width: 100%;
 }
 
+.crossedLine {
+  text-decoration: line-through
+}
+
 .task {
   background: #f4f4f4;
   margin: 5px;
