@@ -4,14 +4,16 @@ import React from "react";
 
 
 const useStyles = makeStyles ((theme) => ({
-    header: {
 
-    
+    header: {
         backgroundColor:"#010161",
+        marginBottom: theme.spacing(1),
+        margingTop: theme.spacing(1),
+        
     },
         logo: {
             fontFamily: "monospace",
-            fontWeight: 300,
+            fontWeight: 500,
             color: "#FFFEFE",
             textAlign: 'center',
         },
@@ -34,7 +36,11 @@ export default function Header() {
 
     return (
         <header>
-            <AppBar className = "header">{displayDesktop()}</AppBar>
+            <AppBar className = "header" position ="static">
+               
+                {displayDesktop()}
+                
+            </AppBar>
         </header>
     );
 }
