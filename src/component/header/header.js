@@ -28,7 +28,7 @@ export default function Header() {
 
     const IBMlogo = (
        
-        <Typography variant="h6" component="h1" className={logo}>
+        <Typography variant="h5" component="h1" className={logo}>
             
             IBM CHECKLIST - GROUP 10
         </Typography>

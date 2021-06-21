@@ -60,9 +60,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header
-        title='2021 IBM Accelerate Software Track Lab 1 Team 10 To Do List App'
-      />
+      <Header/>
       <AddTask onAdd={addTask} />
       {tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={deleteTask} onEdit={editTasks} completeTasks={completeTasks} />) : 'Add something to your list!'}
     </div>

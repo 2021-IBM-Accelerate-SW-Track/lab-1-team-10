@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
 
 * {
   box-sizing: border-box;
@@ -25,9 +25,8 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-top: 0px;
-  border:  50px; ;
+  border: 50px;
 }
-
 
 .App {
   text-align: center;
@@ -73,21 +72,20 @@ code {
 
 .completedTask {
   text-decoration: line-through;
-  flex-basis: 80%
+  flex-basis: 80%;
 }
 .uncompletedTask {
-  flex-basis: 80%
+  flex-basis: 80%;
 }
 
 .task {
-    background: rgb(1, 7, 97);
-    width: 80%;
-    margin: 20px auto;
-    border-radius: 15px;
-    padding: 20px;
-    color: rgb(255, 255, 255);
-    border: 3px solid rgb(247, 247, 247);
-  
+  background: rgb(1, 7, 97);
+  width: 80%;
+  margin: 20px auto;
+  border-radius: 15px;
+  padding: 20px;
+  color: rgb(255, 255, 255);
+  border: 3px solid rgb(247, 247, 247);
 }
 
 .task.reminder {
@@ -101,19 +99,19 @@ code {
 }
 
 .add-form {
-
   background: rgb(1, 7, 97);
-    width: 80%;
-    margin-top: 30px;
-    margin: 20px auto;
-    border-radius: 15px;
-    padding: 20px;
-    color: rgb(255, 255, 255);
-    border: 3px solid rgb(247, 247, 247);
+  width: 80%;
+  margin-top: 30px;
+  margin: 20px auto;
+  border-radius: 15px;
+  padding: 20px;
+  color: rgb(255, 255, 255);
+  border: 3px solid rgb(247, 247, 247);
 }
 
 .form-control {
   margin: 20px 0;
+  font-size: 20px;
 }
 
 .form-control label {
@@ -147,4 +145,3 @@ footer {
   margin-top: 31px;
   text-align: center;
 }
-
